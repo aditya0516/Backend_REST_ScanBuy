@@ -14,9 +14,13 @@ public class Book {
     @Column(name = "read1")
     private boolean read;
 
+
+    //No Argument Constructor
     public Book() {
     }
 
+
+    //All argument Constructor
     public Book(String barcode, String title, String author, int numofpages, boolean read) {
         this.barcode = barcode;
         this.title = title;
@@ -24,6 +28,9 @@ public class Book {
         this.numofpages = numofpages;
         this.read = read;
     }
+
+
+    // Created Getters and Setters
 
     public String getBarcode() {
         return barcode;

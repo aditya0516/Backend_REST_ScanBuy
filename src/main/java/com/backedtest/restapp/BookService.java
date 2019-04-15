@@ -14,12 +14,13 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-   // private List<Book> books = new ArrayList<>(Arrays.asList(
-     //       new Book("Barcode1", "Title1", "Author1", 20, true),
-       //     new Book("Barcode2", "Title2", "Author2", 40, false),
-           // new Book("Barcode3", "Title3", "Author3", 30, true)
-    //));
+   /* private List<Book> books = new ArrayList<>(Arrays.asList(
+            new Book("Barcode1", "Title1", "Author1", 20, true),
+            new Book("Barcode2", "Title2", "Author2", 40, false),
+            new Book("Barcode3", "Title3", "Author3", 30, true)
+    )); */
 
+// Function to get All books
     public List<Book> getAllBooks() {
         //return books;
         List<Book> books = new ArrayList<>();
@@ -27,11 +28,13 @@ public class BookService {
         return books;
     }
 
+    // Function to get a Book by Barcode
     public Optional<Book> getBook(String barcode) {
        // return books.stream().filter(t -> t.getBarcode().equals(barcode)).findFirst().get();
         return bookRepository.findById(barcode);
     }
 
+    // Function to add a new Book
     public void addBook(Book book) {
         //books.add(book);
         this.bookRepository.save(book);
@@ -47,6 +50,8 @@ public class BookService {
         }
     }
 */
+
+    // Function to delete a book
     public void deleteBook(String barcode) {
         //books.removeIf(t -> t.getBarcode().equals(barcode));
          bookRepository.deleteById(barcode);
