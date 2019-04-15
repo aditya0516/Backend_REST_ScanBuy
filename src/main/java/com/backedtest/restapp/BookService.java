@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -27,9 +27,10 @@ public class BookService {
         return books;
     }
 
-   // public Book getBook(String barcode) {
-     //   return books.stream().filter(t -> t.getBarcode().equals(barcode)).findFirst().get();
-    //}
+    public Optional<Book> getBook(String barcode) {
+       // return books.stream().filter(t -> t.getBarcode().equals(barcode)).findFirst().get();
+        return bookRepository.findById(barcode);
+    }
 
     public void addBook(Book book) {
         //books.add(book);
