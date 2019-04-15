@@ -46,9 +46,11 @@ public class BookService {
             }
         }
     }
-
-    public void deleteBook(String barcode) {
-        books.removeIf(t -> t.getBarcode().equals(barcode));
-    }
 */
+    public void deleteBook(String barcode) {
+        //books.removeIf(t -> t.getBarcode().equals(barcode));
+         bookRepository.deleteById(barcode);
+
+    }
+
 }

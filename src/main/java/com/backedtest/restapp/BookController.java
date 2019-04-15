@@ -28,11 +28,11 @@ public class BookController {
         bookService.addBook(new Book(book.getBarcode(),book.getTitle(),book.getAuthor(),book.getNumofpages(),book.isRead()));
         return "Added a new Book";
     }
-  /*
+
 
     @RequestMapping(method = RequestMethod.DELETE,value="/books/{barcode}")
     public void deleteBook(@PathVariable String barcode){
          bookService.deleteBook(barcode);
     }
-*/
+
 }
