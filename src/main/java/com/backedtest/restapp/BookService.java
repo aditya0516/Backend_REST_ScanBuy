@@ -25,12 +25,15 @@ public class BookService {
         //return books;
         List<Book> books = new ArrayList<>();
         this.bookRepository.findAll().forEach(books::add);
+        System.out.println("########################################## All Books Displayed ##########################################");
         return books;
     }
 
     // Function to get a Book by Barcode
     public Optional<Book> getBook(String barcode) {
        // return books.stream().filter(t -> t.getBarcode().equals(barcode)).findFirst().get();
+        System.out.println("########################################## Book Displayed ##########################################");
+
         return bookRepository.findById(barcode);
     }
 
@@ -38,6 +41,8 @@ public class BookService {
     public void addBook(Book book) {
         //books.add(book);
         this.bookRepository.save(book);
+        System.out.println("########################################## Added a Book ##########################################");
+
     }
 /*
     public void updateBook(String barcode, Book book) {
@@ -55,6 +60,7 @@ public class BookService {
     public void deleteBook(String barcode) {
         //books.removeIf(t -> t.getBarcode().equals(barcode));
          bookRepository.deleteById(barcode);
+        System.out.println("########################################## Deleted a book ##########################################");
 
     }
 
