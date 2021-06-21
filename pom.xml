@@ -74,8 +74,8 @@
                     <versionDigitToIncrement>${gitflowDigitToIncrement}</versionDigitToIncrement>
 
                     <!-- Execute mvn verify before release -->
-                    <preReleaseGoals>verify</preReleaseGoals>
-                    <preHotfixGoals>verify</preHotfixGoals>
+<!--                    <preReleaseGoals>verify</preReleaseGoals>-->
+<!--                    <preHotfixGoals>verify</preHotfixGoals>-->
 
                     <!-- Configure branches -->
                     <gitFlowConfig>
