@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.backedtest</groupId>
     <artifactId>restapp</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>restapp</name>
     <description>Demo project for Spring Boot</description>
 
@@ -61,7 +61,7 @@
         <url>https://github.com/aditya0516/Backend_REST_Scanbuy</url>
         <connection>scm:git:ssh://git@github.com:aditya0516/Backend_REST_Scanbuy.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:aditya0516/Backend_REST_Scanbuy.git</developerConnection>
-        <tag>v0.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <build>
