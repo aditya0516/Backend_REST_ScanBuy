@@ -94,7 +94,8 @@
                     <!-- Execute mvn verify before release -->
 <!--                    <preReleaseGoals>verify</preReleaseGoals>-->
 <!--                    <preHotfixGoals>verify</preHotfixGoals>-->
-                    <postReleaseGoals> -B release:clean release:prepare release:perform -DreleaseVersion=${project.version} </postReleaseGoals>
+<!--                    <postReleaseGoals> -B release:clean release:prepare release:perform -DreleaseVersion=${project.version} </postReleaseGoals>-->
+                    
 
                     <!-- Configure branches -->
                     <gitFlowConfig>
