@@ -83,7 +83,7 @@
                     <pushRemote>false</pushRemote>
 
                     <!-- Set to true to immediately bump the development version when creating a release branch -->
-                    <commitDevelopmentVersionAtStart>true</commitDevelopmentVersionAtStart>
+                    <commitDevelopmentVersionAtStart>false</commitDevelopmentVersionAtStart>
 
                     <!-- Which digit to increas in major.minor.patch versioning, the values being 0.1.2 respectively.
                          By default the rightmost number is increased.
@@ -92,8 +92,8 @@
                     <versionDigitToIncrement>${gitflowDigitToIncrement}</versionDigitToIncrement>
 
                     <!-- Execute mvn verify before release -->
-                    <preReleaseGoals>verify</preReleaseGoals>
-                    <preHotfixGoals>verify</preHotfixGoals>
+<!--                    <preReleaseGoals>verify</preReleaseGoals>-->
+<!--                    <preHotfixGoals>verify</preHotfixGoals>-->
                     <postReleaseGoals> -B release:clean release:prepare release:perform -DreleaseVersion=${project.version} </postReleaseGoals>
 
                     <!-- Configure branches -->
