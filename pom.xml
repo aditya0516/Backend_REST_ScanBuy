@@ -46,6 +46,25 @@
 
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>1d93f8ce557a-releases</name>
+            <url>http://localhost:8081/artifactory/test-libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>1d93f8ce557a-snapshots</name>
+            <url>http://localhost:8081/artifactory/test-libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <scm>
+        <url>https://github.com/aditya0516/Backend_REST_Scanbuy</url>
+        <connection>scm:git:ssh://git@github.com:aditya0516/Backend_REST_Scanbuy.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:aditya0516/Backend_REST_Scanbuy.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
@@ -74,8 +93,9 @@
                     <versionDigitToIncrement>${gitflowDigitToIncrement}</versionDigitToIncrement>
 
                     <!-- Execute mvn verify before release -->
-<!--                    <preReleaseGoals>verify</preReleaseGoals>-->
-<!--                    <preHotfixGoals>verify</preHotfixGoals>-->
+                    <preReleaseGoals>verify</preReleaseGoals>
+                    <preHotfixGoals>verify</preHotfixGoals>
+                    <postReleaseGoals>release:clean release:prepare release:perform -B</postReleaseGoals>
 
                     <!-- Configure branches -->
                     <gitFlowConfig>
@@ -85,10 +105,20 @@
                     </gitFlowConfig>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+<!--                    <tag>v${releaseVersion}</tag>-->
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <pushChanges>false</pushChanges>
+                    <localCheckout>true</localCheckout>
+                </configuration>
+            </plugin>
         </plugins>
-
-
-
     </build>
 
 </project>
