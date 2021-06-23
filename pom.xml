@@ -78,6 +78,8 @@
                 <configuration>
                     <!-- We use maven wrapper in all our projects instead of a local maven installation -->
 <!--                    <mvnExecutable>./mvnw</mvnExecutable>-->
+                    
+                    <fetchRemote>false</fetchRemote>
 
                     <!-- Don’t push to the git remote. Very useful for testing locally -->
                     <pushRemote>false</pushRemote>
