@@ -96,6 +96,8 @@
                     <!-- Execute mvn verify before release -->
 <!--                    <preReleaseGoals>verify</preReleaseGoals>-->
 <!--                    <preHotfixGoals>verify</preHotfixGoals>-->
+                    <useSnapshotInRelease>true</useSnapshotInRelease>
+
                     <postReleaseGoals> -B release:clean release:prepare release:perform -DreleaseVersion=${project.version} </postReleaseGoals>
                     
 
