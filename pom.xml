@@ -98,8 +98,8 @@
 <!--                    <preHotfixGoals>verify</preHotfixGoals>-->
                     <useSnapshotInRelease>true</useSnapshotInRelease>
 
-                    <postReleaseGoals> -B release:clean release:prepare release:perform -DreleaseVersion=${project.version} </postReleaseGoals>
-                    
+<!--                    <postReleaseGoals> -B release:clean release:prepare release:perform -DreleaseVersion=${project.version} </postReleaseGoals>-->
+                    <postReleaseGoals>clean deploy</postReleaseGoals>
 
                     <!-- Configure branches -->
                     <gitFlowConfig>
