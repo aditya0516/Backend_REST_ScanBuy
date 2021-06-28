@@ -82,7 +82,7 @@
                     <fetchRemote>false</fetchRemote>
 
                     <!-- Don’t push to the git remote. Very useful for testing locally -->
-                    <pushRemote>false</pushRemote>
+                    <pushRemote>true</pushRemote>
 
                     <!-- Set to true to immediately bump the development version when creating a release branch -->
                     <commitDevelopmentVersionAtStart>false</commitDevelopmentVersionAtStart>
@@ -96,7 +96,7 @@
                     <!-- Execute mvn verify before release -->
 <!--                    <preReleaseGoals>verify</preReleaseGoals>-->
 <!--                    <preHotfixGoals>verify</preHotfixGoals>-->
-                    <useSnapshotInRelease>true</useSnapshotInRelease>
+<!--                    <useSnapshotInRelease>true</useSnapshotInRelease>-->
 
 <!--                    <postReleaseGoals> -B release:clean release:prepare release:perform -DreleaseVersion=${project.version} </postReleaseGoals>-->
                     <postReleaseGoals>clean deploy</postReleaseGoals>
@@ -106,6 +106,9 @@
                         <productionBranch>master</productionBranch>
                         <!-- default is develop, but we use development -->
                         <developmentBranch>develop</developmentBranch>
+                        <featureBranchPrefix>feature/</featureBranchPrefix>
+                        <releaseBranchPrefix>release/</releaseBranchPrefix>
+                        <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
                     </gitFlowConfig>
                 </configuration>
             </plugin>
